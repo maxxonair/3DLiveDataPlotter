@@ -20,9 +20,11 @@ public class AttitudeFrame {
 	 private static Quaternion quatTemp;
 	 
 	 private String objectFilePath;
+	 private double modelScale; 
 	
-	public AttitudeFrame(String objectFilePath) {
+	public AttitudeFrame(String objectFilePath, double modelScale) {
 		quatTemp = new Quaternion(1,0,0,0);
+		this.modelScale = modelScale; 
         spaceShipView = new AttitudeFx();
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BorderLayout());
@@ -48,7 +50,7 @@ public class AttitudeFrame {
             @Override
             public void run() {
             	try {
-            	spaceShipView.start(fxPanel, objectFilePath);
+            	spaceShipView.start(fxPanel, objectFilePath, modelScale);
             	
             	} catch (Exception runExcp){
             		System.out.println(runExcp);
@@ -82,7 +84,7 @@ public class AttitudeFrame {
             public void run() {
             	//spaceShipView.model.getChildren().removeAll();
             //spaceShipView.coordinateSystem.getChildren().removeAll();
-            	spaceShipView.start(fxPanel, objectFilePath);
+            	spaceShipView.start(fxPanel, objectFilePath, modelScale);
             }
        });
       

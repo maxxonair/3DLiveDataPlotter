@@ -20,7 +20,9 @@ public class Main {
 	 * @param args
 	 */
 	
-	private static String model3D = "millenium-falcon.obj";
+	//private static String model3D = "millenium-falcon.obj";
+	private static String model3D = "mf2.obj";
+	private static double modelScale = 3; 
 	
 	public static void main(String[] args) {
 		ArduinoGate arduinoGate = new ArduinoGate();
@@ -31,7 +33,7 @@ public class Main {
 
 		String objectFilePath = FilePaths.modelPath + model3D;
 
-		AttitudeFrame panel = new AttitudeFrame(objectFilePath);
+		AttitudeFrame panel = new AttitudeFrame(objectFilePath, modelScale);
 		panel.getMainPanel().setPreferredSize(new Dimension(1200,800));
 		frame.add(panel.getMainPanel(), BorderLayout.CENTER);
 		

@@ -103,9 +103,10 @@ public class AttitudeFx {
 	}
 
 
-	public  void start(JFXPanel fxpanel, String objectFilePath) {
+	public  void start(JFXPanel fxpanel, String objectFilePath,  double modelScale) {
 		
 		 this.modelObjectPath=objectFilePath;
+		 this.modelScale=modelScale;
 		 this.fxPanel = fxpanel;
 		 
 		 model =  loadModel(modelObjectPath);

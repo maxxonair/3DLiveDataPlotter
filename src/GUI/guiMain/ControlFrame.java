@@ -63,11 +63,11 @@ public class ControlFrame {
 		 nqw = new JLabel("qw= "+qN.w);
 		 nqw.setForeground(labelColor);
 		 nqx = new JLabel("qx= "+qN.x);
-		 nqx.setForeground(labelColor);
+		 nqx.setForeground(Color.BLUE);
 		 nqy = new JLabel("qy= "+qN.y);
-		 nqy.setForeground(labelColor);
+		 nqy.setForeground(Color.GREEN);
 		 nqz = new JLabel("qz= "+qN.z);
-		 nqz.setForeground(labelColor);
+		 nqz.setForeground(Color.RED);
 		 
 		  labelEuler1 = new JLabel("");
 		  labelEuler2 = new JLabel("");
@@ -116,7 +116,8 @@ public class ControlFrame {
 	
 				@Override
 				public void run() {
-					aFrame.modelRotation(qN);	
+					Quaternion quat3D = new Quaternion(qN.w, -qN.y, -qN.x, qN.z);
+					aFrame.modelRotation(quat3D);	
 				}
 			
 			});

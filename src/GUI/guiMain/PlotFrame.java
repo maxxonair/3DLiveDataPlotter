@@ -21,7 +21,7 @@ public class PlotFrame {
 	private ArduinoGate arduinoGate;
 	private RealTimePlotElement realtimePlotElement;
 	
-	private boolean packageReadOut = false; 
+	private boolean packageReadOut = true; 
 	
 	private String arduinoDataDelimiter = " "; 		// Tab delimited data 
 	private boolean arduinoListener=true;

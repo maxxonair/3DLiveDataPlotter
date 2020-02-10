@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project 25_ArduinoCom">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="/Users/x/eclipse-workspace"/>
+    <property name="dir.jarfile" value="/Users/x/Documents/003_Tools/25_ArduinoCom"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/ArduinoComm.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="GUI.guiMain.Main"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.jarfile}/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/lib/jcommon-1.0.23.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/lib/jfreechart-1.0.19.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/lib/jimObjModelImporterJFX.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/lib/jSerialComm-2.5.3.jar"/>
+        </jar>
+    </target>
+</project>
